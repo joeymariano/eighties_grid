@@ -12,6 +12,7 @@ Grid grid1;
 Globe globe;
 
 int c;
+float a = 0.0;
 
 void settings(){
   fullScreen(P3D);
@@ -30,7 +31,7 @@ void draw(){
   // grid color, linespace, lineDepth
   grid1.update(black, 60, 0);
 
-  // grid color, size, x, y, d
-  globe.update(colrs[ int(random(0, 4)) ], 40, displayWidth/2, displayHeight/2, 400);
+  // random color note colrs[ int(random(0, 4)) ]
   
+  bounceGlobe();
 }
