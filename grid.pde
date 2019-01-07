@@ -1,15 +1,21 @@
 class Grid {
   
-  float lineDepth = 100;
-  
   float gridSpace;
   float gridStroke = 0;
   boolean gridGrow = false;
   
   int upperLeftX = -displayWidth;
   int upperLeftY = -displayHeight;
+  
+  float spin;
  
-  void update(color st, float space){
+  void update(color st, float space, float lineDepth){
+    pushMatrix();
+    
+    spin += .2;
+    translate(displayWidth/2, displayHeight/2, 0);
+    rotate(radians(spin));
+
     stroke(st);
     gridSpace = space;
     strokeWeight(gridStroke);
@@ -33,6 +39,8 @@ class Grid {
     if (gridStroke <=0){
        gridGrow = true;
     }
+    
+    popMatrix();
   }
-
+  
 }

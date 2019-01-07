@@ -8,10 +8,10 @@ color white = #FFFFFF;
 color black = #000000;
 color[] colrs = {pink, blue, yellow, purple, red};
 
-Grid grid;
+Grid grid1;
+Globe globe;
 
 int c;
-float spin;
 
 void settings(){
   fullScreen(P3D);
@@ -20,16 +20,17 @@ void settings(){
 
 void setup(){
   background(white);
-  grid = new Grid(); 
+  grid1 = new Grid(); 
+  globe = new Globe();
 }
 
 void draw(){
-  spin += .2;
-  translate(displayWidth/2, displayHeight/2);
-  rotate(radians(spin));
   background(white);
+
+  // grid color, linespace, lineDepth
+  grid1.update(black, 60, 0);
+
+  // grid color, size, x, y, d
+  globe.update(colrs[ int(random(0, 4)) ], 40, displayWidth/2, displayHeight/2, 400);
   
-  // grid color, linespace
-  grid.update(black, 60);
-  grid.update(pink, 80);
 }
