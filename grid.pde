@@ -36,7 +36,7 @@ class Grid {
     if (gridStroke >= gridSpace/2.5){
       gridGrow = false;
     }
-    if (gridStroke <=0){
+    if (gridStroke <= 4){
        gridGrow = true;
     }
     
