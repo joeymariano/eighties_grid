@@ -15,10 +15,10 @@ int c;
 
 void settings(){
   fullScreen(P3D);
-
 }
 
 void setup(){
+  noCursor();
   background(white);
   grid1 = new Grid(); 
   globe = new Globe();
