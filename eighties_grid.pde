@@ -10,12 +10,16 @@ color[] colrs = {pink, blue, yellow, purple, red};
 
 Grid grid1;
 Globe globe;
+Squig squig;
+Cylinder cilly;
 
 int c;
 float a = 0.0;
 
 PGraphics pg;
 PGraphics pg2;
+
+import processing.opengl.*;
 
 void settings(){
   //fullScreen(P3D);
@@ -29,6 +33,8 @@ void setup(){
   background(white);
   grid1 = new Grid(); 
   globe = new Globe();
+  squig = new Squig();
+  cilly = new Cylinder();
 
 }
 
@@ -45,6 +51,8 @@ void draw(){
   pg2.beginDraw();
   pg.background(white, 0);
   bounceGlobe();
+  //squig.update();
+  cilly.update();
   pg2.endDraw();
   image(pg2, 0,0);
   //image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
