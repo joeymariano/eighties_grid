@@ -9,6 +9,7 @@ color black = #000000;
 color[] colrs = {pink, blue, yellow, purple, red};
 
 Grid grid1;
+Grid grid2;
 Globe globe;
 Squig squig;
 Cylinder cilly;
@@ -32,6 +33,7 @@ void setup(){
   noCursor();
   background(white);
   grid1 = new Grid(); 
+  grid2 = new Grid(); 
   globe = new Globe();
   squig = new Squig();
   cilly = new Cylinder();
@@ -42,6 +44,7 @@ void draw(){
   pg.beginDraw();
   pg.background(white);
   // grid color, linespace, lineDepth
+  grid2.update(purple, 60, -20);
   grid1.update(black, 60, 0);
   pg.endDraw();
   image(pg, 0,0);

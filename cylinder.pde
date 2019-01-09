@@ -6,8 +6,9 @@ class Cylinder {
   float depth = 200;
   
   void update(){
-     pg2.directionalLight(166, 166, 196, -60, -60, -60);
-     pg2.ambientLight(105, 105, 130);
+    pg2.pushMatrix();
+    pg2.directionalLight(255, 255, 255, -1, 0, -3);
+    pg2.fill(blue);
      pg2.translate(width/2, height/2, -200);
      pg2.rotateY(ang2);
      pg2.rotateX(ang2*2);
@@ -43,7 +44,7 @@ class Cylinder {
        ang+=360/pts;
      }
      pg2.endShape(); 
-     
+     pg2.popMatrix();
      ang2+=PI/120; //for rotation 
   }
   
