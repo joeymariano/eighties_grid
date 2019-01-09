@@ -16,5 +16,5 @@ void bounceGlobe(){
     a = a + .2;
   }
   // globe color, size, x, y, d
-  globe.update(pink, 40, pg2.width/2 + sin(a)/40, pg2.height/2 + sin(a)*40, 10 + sin(a)*200);
+  globe.update(pink, 40, pg2.width/2 + sin(a)*40, pg2.height/2 + cos(a)*40, 10 + sin(a)*200);
 }

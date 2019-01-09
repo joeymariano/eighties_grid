@@ -18,15 +18,14 @@ PGraphics pg;
 PGraphics pg2;
 
 void settings(){
-  fullScreen(P3D);
-  //size(800,450, P3D);
+  //fullScreen(P3D);
+  size(800,450, P3D);
 }
 
 void setup(){
   pg = createGraphics(800,450, P3D);
   pg2 = createGraphics(800,450, P3D);
   noCursor();
-  noSmooth();
   background(white);
   grid1 = new Grid(); 
   globe = new Globe();
@@ -39,12 +38,12 @@ void draw(){
   // grid color, linespace, lineDepth
   grid1.update(black, 60, 0);
   pg.endDraw();
-  image(pg, 0,0, displayWidth, displayHeight);
+  image(pg, 0,0);
 
   // random color note colrs[ int(random(0, 4)) ]
   pg2.beginDraw();
   pg.background(white, 0);
   bounceGlobe();
   pg2.endDraw();
-  image(pg2, 0,0, displayWidth, displayHeight);
+  image(pg2, 0,0);
 }
