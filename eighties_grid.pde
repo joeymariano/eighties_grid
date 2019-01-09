@@ -14,11 +14,14 @@ Globe globe;
 int c;
 float a = 0.0;
 
+PGraphics pg;
+
 void settings(){
   fullScreen(P3D);
 }
 
 void setup(){
+  pg = createGraphics(800,450, P3D);
   noCursor();
   background(white);
   grid1 = new Grid(); 
@@ -26,12 +29,15 @@ void setup(){
 }
 
 void draw(){
-  background(white);
+  pg.beginDraw();
+  pg.background(white);
 
   // grid color, linespace, lineDepth
   grid1.update(black, 60, 0);
 
   // random color note colrs[ int(random(0, 4)) ]
   
-  bounceGlobe();
+  //bounceGlobe();
+  pg.endDraw();
+  image(pg, 0,0, displayWidth, displayHeight);
 }

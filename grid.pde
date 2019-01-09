@@ -10,22 +10,24 @@ class Grid {
   float spin;
  
   void update(color st, float space, float lineDepth){
-    pushMatrix();
+    pg.pushMatrix();
     
     spin += .2;
-    translate(displayWidth/2, displayHeight/2, 0);
-    rotate(radians(spin));
+    pg.translate(pg.width/2, pg.height/2, 0);
+    pg.rotate(radians(spin));
 
-    stroke(st);
+    pg.stroke(st);
     gridSpace = space;
-    strokeWeight(gridStroke);
+    pg.strokeWeight(gridStroke);
     
-    for (int i = upperLeftX; i < displayWidth; i += gridSpace){
-         line(i, upperLeftY, lineDepth, i, displayHeight, lineDepth);
-         for(int x = upperLeftY; x < displayHeight; x += gridSpace) {
-           line(upperLeftX, i, lineDepth, displayWidth, i, lineDepth);
+    for (int i = upperLeftX; i < pg.width; i += gridSpace){
+         pg.line(i, upperLeftY, lineDepth, i, pg.height, lineDepth);
+         for(int x = upperLeftY; x < pg.height; x += gridSpace) {
+           pg.line(upperLeftX, i, lineDepth, pg.width, i, lineDepth);
          }
     }
+    
+     pg.popMatrix();
     
     if (gridGrow == true){
       gridStroke += .5;
@@ -39,8 +41,6 @@ class Grid {
     if (gridStroke <= 4){
        gridGrow = true;
     }
-    
-    popMatrix();
   }
   
 }
