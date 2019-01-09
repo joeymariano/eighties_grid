@@ -19,21 +19,23 @@ PGraphics pg2;
 
 void settings(){
   fullScreen(P3D);
+  //size(800,450, P3D);
 }
 
 void setup(){
   pg = createGraphics(800,450, P3D);
   pg2 = createGraphics(800,450, P3D);
   noCursor();
+  noSmooth();
   background(white);
   grid1 = new Grid(); 
   globe = new Globe();
+
 }
 
 void draw(){
   pg.beginDraw();
   pg.background(white);
-
   // grid color, linespace, lineDepth
   grid1.update(black, 60, 0);
   pg.endDraw();
