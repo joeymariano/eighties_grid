@@ -39,6 +39,7 @@ void draw(){
   grid1.update(black, 60, 0);
   pg.endDraw();
   image(pg, 0,0);
+  //image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
 
   // random color note colrs[ int(random(0, 4)) ]
   pg2.beginDraw();
@@ -46,4 +47,5 @@ void draw(){
   bounceGlobe();
   pg2.endDraw();
   image(pg2, 0,0);
+  //image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
 }
