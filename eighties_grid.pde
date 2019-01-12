@@ -23,8 +23,8 @@ PGraphics pg2;
 import processing.opengl.*;
 
 void settings(){
-  //fullScreen(P3D);
-  size(800,450, P3D);
+  fullScreen(P3D);
+  //size(800,450, P3D);
 }
 
 void setup(){
@@ -47,16 +47,18 @@ void draw(){
   grid2.update(purple, 60, -20);
   grid1.update(black, 60, 0);
   pg.endDraw();
-  image(pg, 0,0);
-  //image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
+  //image(pg, 0,0);
+  image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
 
   // random color note colrs[ int(random(0, 4)) ]
   pg2.beginDraw();
   pg.background(white, 0);
-  bounceGlobe();
-  //squig.update();
-  cilly.update();
+  globe.bounceGlobe();
+  squig.update(yellow);
+  cilly.update(blue);
   pg2.endDraw();
-  image(pg2, 0,0);
-  //image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
+  //image(pg2, 0,0);
+  image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
+  if (frameCount % 4 == 0){
+  }
 }

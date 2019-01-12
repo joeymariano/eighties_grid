@@ -1,15 +1,23 @@
 class Cylinder {
+  float radius;
+  float ang;
+  float ang2;
+  int pts;
+  float depth;
   
-  float radius = 100;
-  float ang = 0, ang2 = 0;
-  int pts = 120;
-  float depth = 200;
+  Cylinder(){
+    radius = 100;
+    ang = 0;
+    ang2 = 0;
+    pts = 120;
+    depth = 200;
+  }
   
-  void update(){
+  void update(color c){
     pg2.pushMatrix();
     pg2.directionalLight(255, 255, 255, -1, 0, -3);
-    pg2.fill(blue);
-     pg2.translate(width/2, height/2, -200);
+    pg2.fill(c);
+     pg2.translate(pg2.width/2, pg2.height/2, -200);
      pg2.rotateY(ang2);
      pg2.rotateX(ang2*2);
      pg2.rotateZ(ang2);
@@ -26,7 +34,7 @@ class Cylinder {
      pg2.endShape(); 
      
      //cap 1
-     pg2.beginShape(POLYGON); 
+     pg2.beginShape(POLYGON);
      for (int i=0; i<=pts; i++){
        float  px = cos(radians(ang))*radius;
        float  py = sin(radians(ang))*radius;
@@ -36,7 +44,7 @@ class Cylinder {
      pg2.endShape(); 
     
      //cap2
-     pg2.beginShape(POLYGON); 
+     pg2.beginShape(POLYGON);
      for (int i=0; i<=pts; i++){
        float  px = cos(radians(ang))*radius;
        float  py = sin(radians(ang))*radius;

@@ -27,7 +27,7 @@ class Grid {
          }
     }
     
-     pg.popMatrix();
+    pg.popMatrix();
     
     if (gridGrow == true){
       gridStroke += .5;
