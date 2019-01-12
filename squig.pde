@@ -1,7 +1,7 @@
 class Squig {
-  
   float x;
   float y;
+  color c;
   
   Squig(){
     x = 40;

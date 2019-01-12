@@ -1,5 +1,4 @@
 class Grid {
-  
   float gridSpace;
   float gridStroke;
   boolean gridGrow;

@@ -7,8 +7,6 @@ class Cylinder {
   
   Cylinder(){
     radius = 100;
-    ang = 0;
-    ang2 = 0;
     pts = 120;
     depth = 200;
   }
