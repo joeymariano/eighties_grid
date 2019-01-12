@@ -1,13 +1,18 @@
 class Grid {
   
   float gridSpace;
-  float gridStroke = 0;
-  boolean gridGrow = false;
-  
-  int upperLeftX = -displayWidth;
-  int upperLeftY = -displayHeight;
-  
+  float gridStroke;
+  boolean gridGrow;
+  int upperLeftX;
+  int upperLeftY;
   float spin;
+  
+  Grid(){
+    gridStroke = 0;
+    gridGrow = false;
+    upperLeftX = -displayWidth;
+    upperLeftY = -displayHeight;
+  }
  
   void update(color st, float space, float lineDepth){
     pg.pushMatrix();

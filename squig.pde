@@ -1,7 +1,12 @@
 class Squig {
   
-  float x = 40;
-  float y = 40;
+  float x;
+  float y;
+  
+  Squig(){
+    x = 40;
+    y = 40;
+  }
   
   void update(color c){
     pg2.pushMatrix();
