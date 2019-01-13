@@ -32,8 +32,8 @@ void setup(){
   pg2 = createGraphics(800,450, P3D);
   noCursor();
   background(white);
-  grid1 = new Grid(); 
-  grid2 = new Grid(); 
+  grid1 = new Grid(black, 60, 0); 
+  grid2 = new Grid(purple, 60, -20); 
   globe = new Globe();
   squig = new Squig(yellow);
   cilly = new Cylinder(blue);
@@ -44,8 +44,8 @@ void draw(){
   pg.beginDraw();
   pg.background(white);
   // grid color, linespace, lineDepth
-  grid2.update(purple, 60, -20);
-  grid1.update(black, 60, 0);
+  grid2.update();
+  grid1.update();
   pg.endDraw();
   //image(pg, 0,0);
   image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen

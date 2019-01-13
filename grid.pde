@@ -5,22 +5,28 @@ class Grid {
   int upperLeftX;
   int upperLeftY;
   float spin;
+  color colr;
+  float space;
+  float lineDepth;
   
-  Grid(){
+  Grid(color tempColr, float tempSpace, float tempLineDepth){
     gridStroke = 0;
     gridGrow = false;
     upperLeftX = -displayWidth;
     upperLeftY = -displayHeight;
+    colr = tempColr;
+    space = tempSpace;
+    lineDepth = tempLineDepth;
   }
  
-  void update(color st, float space, float lineDepth){
+  void update(){
     pg.pushMatrix();
     
     spin += .2;
     pg.translate(pg.width/2, pg.height/2, 0);
     pg.rotate(radians(spin));
 
-    pg.stroke(st);
+    pg.stroke(colr);
     gridSpace = space;
     pg.strokeWeight(gridStroke);
     
