@@ -38,7 +38,8 @@ void setup(){
   grid1 = new Grid(black, 60, 0); 
   grid2 = new Grid(purple, 60, -20); 
   globe = new Globe(pink);
-  squig = new Squig(yellow);
+  // color, size/length, thickness
+  squig = new Squig(yellow, 20, 10);
   cilly = new Cylinder(blue);
   triShad = new TriShadow(pink, black);
 }
