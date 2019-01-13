@@ -25,7 +25,7 @@ import processing.opengl.*;
 
 void settings(){
   fullScreen(P3D);
-  //size(800,450, P3D);
+  // size(800,450, P3D);  // not fullscreen
 }
 
 void setup(){
@@ -50,20 +50,23 @@ void draw(){
   grid2.update();
   grid1.update();
   pg.endDraw();
-  //image(pg, 0,0);
+  //image(pg, 0,0);  // not fullscreen
   image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
 
-  // random color note colrs[ int(random(0, 4)) ]
   pg2.beginDraw();
   pg.background(white, 0);
-  // speed for bounce
+
   pg2.directionalLight(255, 255, 255, -1, 0, -3);
+  pg2.ambientLight(102, 102, 102);
+  
+  // speed for bounce
   globe.bounceGlobe(.2);
   squig.update();
   cilly.update();
   triShad.update();
   pg2.endDraw();
-  //image(pg2, 0,0);
+  
+  //image(pg2, 0,0);  // not fullscreen
   image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
   if (frameCount % 4 == 0){
   }

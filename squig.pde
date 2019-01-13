@@ -9,7 +9,7 @@ class Squig {
     x = 40;
     y = 40;
     colr = tempColr;
-    speed = .2;
+    speed = .1;
   }
   
   void update(){
