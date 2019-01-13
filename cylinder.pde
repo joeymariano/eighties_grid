@@ -15,7 +15,7 @@ class Cylinder {
   
   void update(){
     pg2.pushMatrix();
-    pg2.directionalLight(255, 255, 255, -1, 0, -3);
+
     pg2.fill(colr);
      pg2.translate(pg2.width/2, pg2.height/2, -200);
      pg2.rotateY(ang2);

@@ -1,5 +1,4 @@
-# EIGHIES GRID
-----
+# EIGHTIES GRID
 
 * copyright Joey Michalina Mariano 2019
 

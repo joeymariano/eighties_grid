@@ -25,8 +25,7 @@ class Squig {
     pg2.arc(25, 1, 50, 50, -PI, 0);
     pg2.noStroke();
     
-    pg2.popMatrix();
-    
     rot = rot - speed;
+    pg2.popMatrix();
   } 
 }

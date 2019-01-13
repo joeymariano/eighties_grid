@@ -13,6 +13,7 @@ Grid grid2;
 Globe globe;
 Squig squig;
 Cylinder cilly;
+TriShadow triShad;
 
 int c;
 float a = 0.0;
@@ -39,6 +40,7 @@ void setup(){
   globe = new Globe(pink);
   squig = new Squig(yellow);
   cilly = new Cylinder(blue);
+  triShad = new TriShadow(pink, black);
 }
 
 void draw(){
@@ -55,9 +57,11 @@ void draw(){
   pg2.beginDraw();
   pg.background(white, 0);
   // speed for bounce
+  pg2.directionalLight(255, 255, 255, -1, 0, -3);
   globe.bounceGlobe(.2);
   squig.update();
   cilly.update();
+  triShad.update();
   pg2.endDraw();
   //image(pg2, 0,0);
   image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
