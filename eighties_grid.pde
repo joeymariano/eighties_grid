@@ -29,15 +29,16 @@ void settings(){
 
 void setup(){
   pg = createGraphics(800,450, P3D);
+  pg.noSmooth();
   pg2 = createGraphics(800,450, P3D);
+  pg2.noSmooth();
   noCursor();
   background(white);
   grid1 = new Grid(black, 60, 0); 
   grid2 = new Grid(purple, 60, -20); 
-  globe = new Globe();
+  globe = new Globe(pink);
   squig = new Squig(yellow);
   cilly = new Cylinder(blue);
-
 }
 
 void draw(){
@@ -53,7 +54,8 @@ void draw(){
   // random color note colrs[ int(random(0, 4)) ]
   pg2.beginDraw();
   pg.background(white, 0);
-  globe.bounceGlobe();
+  // speed for bounce
+  globe.bounceGlobe(.2);
   squig.update();
   cilly.update();
   pg2.endDraw();
