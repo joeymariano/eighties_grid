@@ -1,4 +1,7 @@
-//colors
+// Visual program for live events.
+// Made with Processing 3.4
+
+// colors
 color pink = #FF48C4;
 color blue = #2bd1fc;
 color yellow = #f3ea5f;
