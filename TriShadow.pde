@@ -22,32 +22,30 @@ class TriShadow{
    pg2.translate(pg.width/8, pg.height/8, 0);
    //pg2.rotateX(100);
    pg2.rotateZ(rot);
-     pg2.rotateY(rot/4);
+   pg2.rotateY(rot/4);
    pg2.noStroke();
+  
+   pg2.beginShape();
+   for(float deg = 0; deg < 360; deg += 120){
+    angle = deg * PI / 180;
+    nextX = (cos(angle) * radius);
+    nextY = sin(angle) * radius;
+    pg2.fill(colr2);
+    pg2.vertex(nextX+offset, nextY+offset, -10);
+   }
+   pg2.endShape(CLOSE);
    
-   //pg2.fill(colr2);
-   //pg2.beginShape();
-   //for(float deg = 0; deg < 360; deg += 120){
-   // angle = deg * PI / 180;
-   // nextX = (cos(angle) * radius);
-   // nextY = sin(angle) * radius;
-   // pg2.vertex(nextX+offset, nextY+offset);
-   //}
-   //pg2.endShape(CLOSE);
-   
-   pg2.fill(colr1);
    pg2.beginShape();
    for(float deg = 0; deg < 360; deg += 120){
     angle = deg * PI / 180;
     nextX = cos(angle) * radius;
     nextY = sin(angle) * radius;
-    pg2.vertex(nextX, nextY);
+    pg2.fill(colr1);
+    pg2.vertex(nextX, nextY, 0);
    }
    pg2.endShape(CLOSE);
      
-
-   
-   rot = rot - speed;
    pg2.popMatrix();
+   rot = rot - speed;
  }
 }
