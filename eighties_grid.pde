@@ -35,8 +35,8 @@ void setup(){
   grid1 = new Grid(); 
   grid2 = new Grid(); 
   globe = new Globe();
-  squig = new Squig();
-  cilly = new Cylinder();
+  squig = new Squig(yellow);
+  cilly = new Cylinder(blue);
 
 }
 
@@ -54,8 +54,8 @@ void draw(){
   pg2.beginDraw();
   pg.background(white, 0);
   globe.bounceGlobe();
-  squig.update(yellow);
-  cilly.update(blue);
+  squig.update();
+  cilly.update();
   pg2.endDraw();
   //image(pg2, 0,0);
   image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen

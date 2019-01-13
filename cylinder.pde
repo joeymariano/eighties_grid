@@ -4,17 +4,19 @@ class Cylinder {
   float ang2;
   int pts;
   float depth;
+  color colr;
   
-  Cylinder(){
+  Cylinder(color tempColr){
     radius = 100;
     pts = 120;
     depth = 200;
+    colr = tempColr;
   }
   
-  void update(color c){
+  void update(){
     pg2.pushMatrix();
     pg2.directionalLight(255, 255, 255, -1, 0, -3);
-    pg2.fill(c);
+    pg2.fill(colr);
      pg2.translate(pg2.width/2, pg2.height/2, -200);
      pg2.rotateY(ang2);
      pg2.rotateX(ang2*2);
