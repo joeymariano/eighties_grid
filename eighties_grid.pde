@@ -50,7 +50,6 @@ void setup(){
 void draw(){
   pg.beginDraw();
   pg.background(white);
-  // grid color, linespace, lineDepth
   grid2.update();
   grid1.update();
   pg.endDraw();
