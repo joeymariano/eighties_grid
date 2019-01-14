@@ -39,10 +39,13 @@ void setup(){
   noCursor();
   background(white);
   grid1 = new Grid(black, 60, 0); 
+  // color, spacing, line, 3d-depth
   grid2 = new Grid(purple, 60, -20); 
+  // color
   globe = new Globe(pink);
   // color, size/length, thickness
   squig = new Squig(red, 20, 10);
+  // color, radius, depth
   cilly = new Cylinder(blue, 100, 200);
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
