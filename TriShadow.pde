@@ -17,7 +17,7 @@ class TriShadow{
  
  void update(){
    pg2.pushMatrix();
-   pg2.translate(pg.width/8, pg.height/8, 0);
+   pg2.translate(pg.width/3, pg.height/3, 0);
    //pg2.rotateX(100);
    pg2.rotateZ(rot);
    pg2.rotateY(rot/4);
@@ -25,7 +25,7 @@ class TriShadow{
   
    makeTri(colr1, 0, 0);
    
-   makeTri(colr2, -10, 10);
+   makeTri(colr2, -18, 10);
      
    pg2.popMatrix();
    rot = rot - speed;

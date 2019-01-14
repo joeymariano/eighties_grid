@@ -2,15 +2,15 @@ class Cylinder {
   float radius;
   float ang;
   float ang2;
-  int pts;
+  int pts = 120;
   float depth;
   color colr;
   
-  Cylinder(color tempColr){
-    radius = 100;
-    pts = 120;
-    depth = 200;
+  Cylinder(color tempColr, float tempRadius, float tempDepth ){
     colr = tempColr;
+    radius = tempRadius;
+    depth = tempDepth;
+
   }
   
   void update(){

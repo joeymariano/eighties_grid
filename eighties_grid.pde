@@ -27,8 +27,8 @@ PGraphics pg2;
 import processing.opengl.*;
 
 void settings(){
-  fullScreen(P3D);
-  // size(800,450, P3D);  // not fullscreen
+  //fullScreen(P3D);
+   size(800,450, P3D);  // not fullscreen
 }
 
 void setup(){
@@ -42,9 +42,9 @@ void setup(){
   grid2 = new Grid(purple, 60, -20); 
   globe = new Globe(pink);
   // color, size/length, thickness
-  squig = new Squig(yellow, 20, 10);
-  cilly = new Cylinder(blue);
-  triShad = new TriShadow(pink, black);
+  squig = new Squig(red, 20, 10);
+  cilly = new Cylinder(blue, 100, 200);
+  triShad = new TriShadow(pink, yellow);
 }
 
 void draw(){
@@ -53,8 +53,8 @@ void draw(){
   grid2.update();
   grid1.update();
   pg.endDraw();
-  //image(pg, 0,0);  // not fullscreen
-  image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
+  image(pg, 0,0);  // not fullscreen
+  //image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
 
   pg2.beginDraw();
   pg.background(white, 0);
@@ -69,8 +69,8 @@ void draw(){
   triShad.update();
   pg2.endDraw();
   
-  //image(pg2, 0,0);  // not fullscreen
-  image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
+  image(pg2, 0,0);  // not fullscreen
+  //image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
   if (frameCount % 4 == 0){
   }
 }
