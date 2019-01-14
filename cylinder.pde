@@ -6,11 +6,10 @@ class Cylinder {
   float depth;
   color colr;
   
-  Cylinder(color tempColr, float tempRadius, float tempDepth ){
+  Cylinder(color tempColr, float tempRadius, float tempDepth){
     colr = tempColr;
     radius = tempRadius;
     depth = tempDepth;
-
   }
   
   void update(){

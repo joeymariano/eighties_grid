@@ -4,15 +4,14 @@ class TriShadow{
   float angle;
   float nextX;
   float nextY;
-  float radius;
+  float radius = 60;
   float rot;
   float speed;
 
- TriShadow(color tempColr1, color tempColr2){
+ TriShadow(color tempColr1, color tempColr2, float tempSpeed){
    colr1 = tempColr1;
    colr2 = tempColr2;
-   radius = 60;
-   speed = .1;
+   speed = tempSpeed;
  }
  
  void update(){

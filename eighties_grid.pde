@@ -44,7 +44,8 @@ void setup(){
   // color, size/length, thickness
   squig = new Squig(red, 20, 10);
   cilly = new Cylinder(blue, 100, 200);
-  triShad = new TriShadow(pink, yellow);
+  // color one, color two, speed
+  triShad = new TriShadow(pink, yellow, .2);
 }
 
 void draw(){
