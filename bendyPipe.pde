@@ -17,8 +17,10 @@ class BendyPipe{
   // for optional helix
   boolean isHelix;
   float helixOffset;
+  
+  color clr;
 
-  BendyPipe(){
+  BendyPipe(color tempColor){
     pts = 40; 
     angle = 0;
     radius = 15.0;
@@ -27,14 +29,17 @@ class BendyPipe{
     segments = 60;
     latheAngle = 0;
     latheRadius = 50.0;
+    
+    // assign color to variable
+    clr = tempColor;
   }
   
   void update(){
       pg2.pushMatrix();
       pg2.noStroke();
-      pg2.fill(150, 195, 125);
+      pg2.fill(clr);
       //center and spin toroid
-      pg2.translate(pg2.width/2, pg2.height/2);
+      pg2.translate(pg2.width/1.2, pg2.height/2);
     
       pg2.rotateX(frameCount*PI/150);
       pg2.rotateY(frameCount*PI/170);

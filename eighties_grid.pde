@@ -54,7 +54,7 @@ void setup(){
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
   
-  bendyPipe = new BendyPipe();
+  bendyPipe = new BendyPipe(blue);
 }
 
 void draw(){
