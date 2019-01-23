@@ -27,13 +27,6 @@ class BendyPipe{
     segments = 60;
     latheAngle = 0;
     latheRadius = 50.0;
-    
-    // for shaded or wireframe rendering 
-    isWireFrame = false;
-    
-    // for optional helix
-    isHelix = false;
-    helixOffset = 5.0;
   }
   
   void update(){
@@ -41,7 +34,7 @@ class BendyPipe{
       pg2.noStroke();
       pg2.fill(150, 195, 125);
       //center and spin toroid
-      pg2.translate(width/2, height/2, -100);
+      pg2.translate(pg2.width/2, pg2.height/2);
     
       pg2.rotateX(frameCount*PI/150);
       pg2.rotateY(frameCount*PI/170);
