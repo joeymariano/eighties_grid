@@ -69,7 +69,7 @@ void draw(){
   pg2.beginDraw();
   pg.background(white, 0);
 
-  pg2.directionalLight(255, 255, 255, -1, 0, -3);
+  pg2.directionalLight(200,200,200, -1, 0, -3);
   pg2.ambientLight(300,300,300);
   
   // speed for bounce

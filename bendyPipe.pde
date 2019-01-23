@@ -11,13 +11,6 @@ class BendyPipe{
   //vertices
   PVector vertices[], vertices2[];
   
-  // for shaded or wireframe rendering 
-  boolean isWireFrame = false;
-  
-  // for optional helix
-  boolean isHelix;
-  float helixOffset;
-  
   color clr;
 
   BendyPipe(color tempColor){
@@ -54,7 +47,6 @@ class BendyPipe{
         vertices[i] = new PVector();
         vertices2[i] = new PVector();
         vertices[i].x = latheRadius + sin(radians(angle))*radius;
-
         vertices[i].z = cos(radians(angle))*radius;
 
         angle+=360.0/pts;
@@ -71,10 +63,6 @@ class BendyPipe{
           vertices2[j].x = cos(radians(latheAngle))*vertices[j].x;
           vertices2[j].y = sin(radians(latheAngle))*vertices[j].x;
           vertices2[j].z = vertices[j].z;
-          // optional helix offset
-          if (isHelix){
-            vertices[j].z+=helixOffset;
-          } 
           pg2.vertex(vertices2[j].x, vertices2[j].y, vertices2[j].z);
         }
 
