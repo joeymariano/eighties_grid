@@ -1,39 +1,45 @@
 class BendyPipe{
-  int pts = 40; 
-float angle = 0;
-float radius = 15.0;
-
-// lathe segments
-int segments = 30;
-float latheAngle = 0;
-float latheRadius = 100.0;
-
-//vertices
-PVector vertices[], vertices2[];
-
-// for shaded or wireframe rendering 
-boolean isWireFrame = false;
-
-// for optional helix
-boolean isHelix = false;
-float helixOffset = 5.0;
+  int pts; 
+  float angle;
+  float radius;
+  
+  // lathe segments
+  int segments;
+  float latheAngle;
+  float latheRadius;
+  
+  //vertices
+  PVector vertices[], vertices2[];
+  
+  // for shaded or wireframe rendering 
+  boolean isWireFrame = false;
+  
+  // for optional helix
+  boolean isHelix;
+  float helixOffset;
 
   BendyPipe(){
-
+    pts = 40; 
+    angle = 0;
+    radius = 15.0;
+    
+    // lathe segments
+    segments = 60;
+    latheAngle = 0;
+    latheRadius = 50.0;
+    
+    // for shaded or wireframe rendering 
+    isWireFrame = false;
+    
+    // for optional helix
+    isHelix = false;
+    helixOffset = 5.0;
   }
   
   void update(){
-      // 2 rendering styles
-      // wireframe or solid
       pg2.pushMatrix();
-      if (isWireFrame){
-        pg2.stroke(255, 255, 150);
-        pg2.noFill();
-      } 
-      else {
-        pg2.noStroke();
-        pg2.fill(150, 195, 125);
-      }
+      pg2.noStroke();
+      pg2.fill(150, 195, 125);
       //center and spin toroid
       pg2.translate(width/2, height/2, -100);
     
@@ -50,13 +56,9 @@ float helixOffset = 5.0;
         vertices[i] = new PVector();
         vertices2[i] = new PVector();
         vertices[i].x = latheRadius + sin(radians(angle))*radius;
-        if (isHelix){
-          vertices[i].z = cos(radians(angle))*radius-(helixOffset* 
-            segments)/2;
-        } 
-        else{
-          vertices[i].z = cos(radians(angle))*radius;
-        }
+
+        vertices[i].z = cos(radians(angle))*radius;
+
         angle+=360.0/pts;
       }
     
@@ -77,13 +79,8 @@ float helixOffset = 5.0;
           } 
           pg2.vertex(vertices2[j].x, vertices2[j].y, vertices2[j].z);
         }
-        // create extra rotation for helix
-        if (isHelix){
-          latheAngle+=720.0/segments;
-        } 
-        else {
-          latheAngle+=360.0/segments;
-        }
+
+        latheAngle+=360.0/segments;
         pg2.endShape();
       }
       pg2.popMatrix();
