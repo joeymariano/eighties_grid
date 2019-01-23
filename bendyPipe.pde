@@ -26,7 +26,7 @@ class BendyPipe{
     radius = 15.0;
     
     // lathe segments
-    segments = 60;
+    segments = 120;
     latheAngle = 0;
     latheRadius = 50.0;
     

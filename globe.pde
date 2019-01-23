@@ -5,11 +5,13 @@ class Globe {
   float y;
   float d;
   float speed;
+  float translucent;
   
-  Globe(color tempColr){
+  Globe(color tempColr, float tempTranslucent){
     speed = 0;
     clr = tempColr;
     size = 40;
+    translucent = tempTranslucent;
   }
   
   void update(){
@@ -17,7 +19,7 @@ class Globe {
     pg2.translate(pg2.width/2 + sin(speed)*40, pg2.height/2 + cos(speed)*40, 10 + sin(speed)*200);
 
     pg2.noStroke();
-    pg2.fill(clr);
+    pg2.fill(clr, translucent);
     pg2.sphere(size);
     pg2.popMatrix();
   }

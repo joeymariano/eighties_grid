@@ -46,7 +46,7 @@ void setup(){
   // color, spacing, line, 3d-depth
   grid2 = new Grid(purple, 60, -20); 
   // color
-  globe = new Globe(pink);
+  globe = new Globe(pink, 0);
   // color, size/length, thickness
   squig = new Squig(red, 20, 10);
   // color, radius, depth
@@ -54,7 +54,7 @@ void setup(){
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
   
-  bendyPipe = new BendyPipe(blue);
+  bendyPipe = new BendyPipe(pink);
 }
 
 void draw(){
@@ -70,7 +70,7 @@ void draw(){
   pg.background(white, 0);
 
   pg2.directionalLight(255, 255, 255, -1, 0, -3);
-  pg2.ambientLight(102, 102, 102);
+  pg2.ambientLight(300,300,300);
   
   // speed for bounce
   globe.bounceGlobe(.2);  // change this to globe update
