@@ -53,6 +53,4 @@ class Cylinder {
      pg2.popMatrix();
      ang2+=PI/120; //for rotation 
   }
-  
-  
 }

@@ -52,7 +52,7 @@ void setup(){
   // color (pink), transparency
   globe = new Globe(colrs[2], 255);
   // color, size/length, thickness
-  squig = new Squig(colrs[6], 20, 10);
+  squig = new Squig(colrs[4], 20, 10);
   // color, radius, depth
   cylinder = new Cylinder(colrs[3], 100, 200);
   // color one, color two, speed
