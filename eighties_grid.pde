@@ -17,6 +17,7 @@ Globe globe;
 Squig squig;
 Cylinder cilly;
 TriShadow triShad;
+BendyPipe bendyPipe;
 
 int c;
 float a = 0.0;
@@ -38,6 +39,9 @@ void setup(){
   pg2.noSmooth();
   noCursor();
   background(white);
+  
+  // initialize Objects
+  
   grid1 = new Grid(black, 60, 0); 
   // color, spacing, line, 3d-depth
   grid2 = new Grid(purple, 60, -20); 
@@ -49,6 +53,8 @@ void setup(){
   cilly = new Cylinder(blue, 100, 200);
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
+  
+  bendyPipe = new BendyPipe();
 }
 
 void draw(){
@@ -67,10 +73,11 @@ void draw(){
   pg2.ambientLight(102, 102, 102);
   
   // speed for bounce
-  globe.bounceGlobe(.2);
+  globe.bounceGlobe(.2);  // change this to globe update
   squig.update();
   cilly.update();
   triShad.update();
+  bendyPipe.update();
   pg2.endDraw();
   
   image(pg2, 0,0);  // not fullscreen
