@@ -54,8 +54,8 @@ void setup(){
   cilly = new Cylinder(blue, 100, 200);
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
-  // color
-  torus = new Torus(pink);
+  // color, thickness, size
+  torus = new Torus(pink, 5, 100);
 }
 
 void draw(){

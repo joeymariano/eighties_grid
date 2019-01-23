@@ -1,7 +1,7 @@
 class Torus{
   int pts; 
   float angle;
-  float radius;
+  float thickness;
   
   // lathe segments
   int segments;
@@ -13,15 +13,14 @@ class Torus{
   
   color clr;
 
-  Torus(color tempColor){
+  Torus(color tempColor, float tempThickness, float tempLatheRadius){
     pts = 40; 
-    angle = 0;
-    radius = 15.0;
+    thickness = tempThickness;
     
     // lathe segments
     segments = 120;
     latheAngle = 0;
-    latheRadius = 50.0;
+    latheRadius = tempLatheRadius;
     
     // assign color to variable
     clr = tempColor;
@@ -46,8 +45,8 @@ class Torus{
       for(int i=0; i<=pts; i++){
         vertices[i] = new PVector();
         vertices2[i] = new PVector();
-        vertices[i].x = latheRadius + sin(radians(angle))*radius;
-        vertices[i].z = cos(radians(angle))*radius;
+        vertices[i].x = latheRadius + sin(radians(angle))*thickness;
+        vertices[i].z = cos(radians(angle))*thickness;
 
         angle+=360.0/pts;
       }
