@@ -40,27 +40,28 @@ void setup(){
   pg2 = createGraphics(800,450, P3D);
   pg2.noSmooth();
   noCursor();
-  background(white);
+  background(colrs[0]);
   
   // initialize Objects
-  grid1 = new Grid(black, 60, 0); 
-  // color, spacing, line, 3d-depth
-  grid2 = new Grid(purple, 60, -20); 
-  // color
-  globe = new Globe(pink, 0);
+  //  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
+  grid1 = new Grid(colrs[1], 60, 0); 
+  // color (purple), spacing, line, 3d-depth
+  grid2 = new Grid(colrs[5], 60, -20); 
+  // color (pink), transparency
+  globe = new Globe(colrs[2], 0);
   // color, size/length, thickness
-  squig = new Squig(red, 20, 10);
+  squig = new Squig(colrs[6], 20, 10);
   // color, radius, depth
-  cilly = new Cylinder(blue, 100, 200);
+  cilly = new Cylinder(colrs[3], 100, 200);
   // color one, color two, speed
-  triShad = new TriShadow(pink, yellow, .2);
+  triShad = new TriShadow(colrs[3], colrs[4], .2);
   // color, thickness, size
-  torus = new Torus(pink, 5, 100);
+  torus = new Torus(colrs[2], 5, 50);
 }
 
 void draw(){
   pg.beginDraw();
-  pg.background(white);
+  pg.background(colrs[0]);
   grid2.update();
   grid1.update();
   pg.endDraw();
@@ -68,7 +69,7 @@ void draw(){
   image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
 
   pg2.beginDraw();
-  pg.background(white, 0);
+  pg.background(colrs[0], 0);
 
   pg2.directionalLight(200,200,200, -1, 0, -3);
   pg2.ambientLight(300,300,300);

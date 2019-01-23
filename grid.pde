@@ -31,10 +31,10 @@ class Grid {
     pg.strokeWeight(gridStroke);
     
     for (int i = upperLeftX; i < pg.width; i += gridSpace){
-         pg.line(i, upperLeftY, lineDepth, i, pg.height, lineDepth);
-         for(int x = upperLeftY; x < pg.height; x += gridSpace) {
-           pg.line(upperLeftX, i, lineDepth, pg.width, i, lineDepth);
-         }
+     pg.line(i, upperLeftY, lineDepth, i, pg.height, lineDepth);
+     for(int x = upperLeftY; x < pg.height; x += gridSpace) {
+       pg.line(upperLeftX, i, lineDepth, pg.width, i, lineDepth);
+     }
     }
     
     pg.popMatrix();

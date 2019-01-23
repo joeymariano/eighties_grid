@@ -19,7 +19,7 @@ class Cylinder {
      pg2.rotateX(ang2*2);
      pg2.rotateZ(ang2);  // don't think this is doing anything
      
-     //body
+     // body
      pg2.beginShape(QUAD_STRIP);
        for (int i=0; i<=120; i++){
          float  px = cos(radians(ang))*radius;
@@ -30,7 +30,7 @@ class Cylinder {
        }
      pg2.endShape(); 
      
-     //c ap 1
+     // cap 1
      pg2.beginShape(POLYGON);
        for (int i=0; i<=120; i++){
          float  px = cos(radians(ang))*radius;
@@ -40,7 +40,7 @@ class Cylinder {
        }
      pg2.endShape(); 
     
-     //cap2
+     // cap2
      pg2.beginShape(POLYGON);
        for (int i=0; i<=120; i++){
          float  px = cos(radians(ang))*radius;
