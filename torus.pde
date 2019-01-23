@@ -1,4 +1,4 @@
-class BendyPipe{
+class Torus{
   int pts; 
   float angle;
   float radius;
@@ -13,7 +13,7 @@ class BendyPipe{
   
   color clr;
 
-  BendyPipe(color tempColor){
+  Torus(color tempColor){
     pts = 40; 
     angle = 0;
     radius = 15.0;

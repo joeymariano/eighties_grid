@@ -30,7 +30,7 @@ class Cylinder {
        }
      pg2.endShape(); 
      
-     //cap 1
+     //c ap 1
      pg2.beginShape(POLYGON);
        for (int i=0; i<=120; i++){
          float  px = cos(radians(ang))*radius;

@@ -17,7 +17,7 @@ Globe globe;
 Squig squig;
 Cylinder cilly;
 TriShadow triShad;
-BendyPipe bendyPipe;
+Torus torus;
 
 int c;
 float a = 0.0;
@@ -54,7 +54,7 @@ void setup(){
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
   
-  bendyPipe = new BendyPipe(pink);
+  torus = new Torus(pink);
 }
 
 void draw(){
@@ -77,7 +77,7 @@ void draw(){
   squig.update();
   cilly.update();
   triShad.update();
-  bendyPipe.update();
+  torus.update();
   pg2.endDraw();
   
   //image(pg2, 0,0);  // not fullscreen
