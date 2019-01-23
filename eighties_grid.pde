@@ -13,21 +13,23 @@ color black = #000000;
 //  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
 color[] colrs = { white, black, pink, blue, yellow, purple, red };
 
+// shapes
 Grid grid1;
 Grid grid2;
 Globe globe;
 Squig squig;
-Cylinder cilly;
+Cylinder cylinder;
 TriShadow triShad;
 Torus torus;
 
 int c;
 float a = 0.0;
 
+// layers
 PGraphics pg;
 PGraphics pg2;
 
-import processing.opengl.*;
+//import processing.opengl.*;
 
 void settings(){
   fullScreen(P3D);
@@ -48,13 +50,13 @@ void setup(){
   // color (purple), spacing, line, 3d-depth
   grid2 = new Grid(colrs[5], 60, -20); 
   // color (pink), transparency
-  globe = new Globe(colrs[2], 0);
+  globe = new Globe(colrs[2], 255);
   // color, size/length, thickness
   squig = new Squig(colrs[6], 20, 10);
   // color, radius, depth
-  cilly = new Cylinder(colrs[3], 100, 200);
+  cylinder = new Cylinder(colrs[3], 100, 200);
   // color one, color two, speed
-  triShad = new TriShadow(colrs[3], colrs[4], .2);
+  triShad = new TriShadow(colrs[2], colrs[4], .2);
   // color, thickness, size
   torus = new Torus(colrs[2], 5, 50);
 }
@@ -77,13 +79,11 @@ void draw(){
   // speed for bounce
   globe.bounceGlobe(.2);  // change this to globe update
   squig.update();
-  cilly.update();
+  cylinder.update();
   triShad.update();
   torus.update();
   pg2.endDraw();
   
   //image(pg2, 0,0);  // not fullscreen
   image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
-  if (frameCount % 4 == 0){
-  }
 }
