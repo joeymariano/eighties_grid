@@ -1,5 +1,6 @@
 // Visual program for live events.
 // Made with Processing 3.4
+// Copyright Joey Michalina Mariano
 
 // colors
 color pink = #FF48C4;
@@ -9,7 +10,8 @@ color purple = #c04df9;
 color red = #ff3f3f;
 color white = #FFFFFF;
 color black = #000000;
-color[] colrs = {pink, blue, yellow, purple, red};
+//  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
+color[] colrs = { white, black, pink, blue, yellow, purple, red };
 
 Grid grid1;
 Grid grid2;
@@ -41,7 +43,6 @@ void setup(){
   background(white);
   
   // initialize Objects
-  
   grid1 = new Grid(black, 60, 0); 
   // color, spacing, line, 3d-depth
   grid2 = new Grid(purple, 60, -20); 
@@ -53,7 +54,7 @@ void setup(){
   cilly = new Cylinder(blue, 100, 200);
   // color one, color two, speed
   triShad = new TriShadow(pink, yellow, .2);
-  
+  // color
   torus = new Torus(pink);
 }
 
