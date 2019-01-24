@@ -2,6 +2,7 @@ class Torus{
   int pts; 
   float angle;
   float thickness;
+  color clr;
   
   // lathe segments
   int segments;
@@ -10,8 +11,6 @@ class Torus{
   
   //vertices
   PVector vertices[], vertices2[];
-  
-  color clr;
 
   Torus(color tempColor, float tempThickness, float tempLatheRadius){
     pts = 40; 
@@ -24,11 +23,24 @@ class Torus{
     
     // assign color to variable
     clr = tempColor;
+    
+    // initialize point arrays
+    vertices = new PVector[pts+1];
+    vertices2 = new PVector[pts+1];
+    
+    // fill arrays vertices[] and verticies2[]
+    for(int i=0; i<=pts; i++){
+      vertices[i] = new PVector();
+      vertices2[i] = new PVector();
+      vertices[i].x = latheRadius + sin(radians(angle))*thickness;
+      vertices[i].z = cos(radians(angle))*thickness;
+
+      angle+=360.0/pts;
+    }
   }
   
   void update(){
       pg2.pushMatrix();
-      pg2.noStroke();
       pg2.fill(clr);
       //center and spin toroid
       pg2.translate(pg2.width/1.2, pg2.height/2);
@@ -36,20 +48,6 @@ class Torus{
       pg2.rotateX(frameCount*PI/150);
       pg2.rotateY(frameCount*PI/170);
       pg2.rotateZ(frameCount*PI/90);
-    
-      // initialize point arrays
-      vertices = new PVector[pts+1];
-      vertices2 = new PVector[pts+1];
-    
-      // fill arrays
-      for(int i=0; i<=pts; i++){
-        vertices[i] = new PVector();
-        vertices2[i] = new PVector();
-        vertices[i].x = latheRadius + sin(radians(angle))*thickness;
-        vertices[i].z = cos(radians(angle))*thickness;
-
-        angle+=360.0/pts;
-      }
     
       // draw toroid
       latheAngle = 0;
