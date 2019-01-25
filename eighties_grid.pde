@@ -68,7 +68,7 @@ void setup(){
   // color, thickness, size
   torus = new Torus(colrs[2], 5, 50);
   //
-  scroller = new Scrollr("nmlstyl");
+  scroller = new Scrollr("ηmlstyl");
 }
 
 void draw(){
@@ -104,6 +104,7 @@ void draw(){
   
     // pg3 settings
   pg3.beginDraw();
+  pg3.background(colrs[0], 0);
   scroller.update();
   pg3.endDraw();
   
