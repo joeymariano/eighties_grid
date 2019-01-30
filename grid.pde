@@ -52,5 +52,4 @@ class Grid {
        gridGrow = true;
     }
   }
-  
 }

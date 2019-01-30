@@ -36,8 +36,8 @@ PFont font;
 //import processing.opengl.*;
 
 void settings(){
-  fullScreen(P3D);
-   //size(800,450, P3D);  // not fullscreen
+  //fullScreen(P3D);
+   size(800,450, P3D);  // not fullscreen
 }
 
 void setup(){
@@ -56,19 +56,20 @@ void setup(){
   //  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
   grid1 = new Grid(colrs[1], 60, 0); 
   // color (purple), spacing, line, 3d-depth
-  grid2 = new Grid(colrs[5], 60, -20); 
+  grid2 = new Grid(colrs[5], 120, -20); 
   // color (pink), transparency
   globe = new Globe(colrs[2], 255);
   // color, size/length, thickness
   squig = new Squig(colrs[4], 20, 10);
-  // color, radius, depth
-  cylinder = new Cylinder(colrs[3], 100, 200);
+  // color, radius, depth, speed
+  cylinder = new Cylinder(colrs[3], 75, 175, 2);
   // color one, color two, speed
-  triShad = new TriShadow(colrs[2], colrs[4], .2);
+  triShad = new TriShadow(colrs[2], colrs[4], .05);
   // color, thickness, size
   torus = new Torus(colrs[2], 5, 50);
   //
-  scroller = new Scrollr("ηmlstyl");
+  scroller = new Scrollr("oh");
+  // ηmlstyl
 }
 
 void draw(){
@@ -80,8 +81,8 @@ void draw(){
   pg.endDraw();
   
   // draw pg image buffer
-  //image(pg, 0,0);  // not fullscreen
-  image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
+  image(pg, 0,0);  // not fullscreen
+  //image(pg, 0,0, displayWidth, displayHeight);  // when fullscreen
   
 
   // pg2 settings
@@ -91,16 +92,16 @@ void draw(){
   pg2.ambientLight(300,300,300);
   
   // draw objects
-  globe.bounceGlobe(.2);  // change this to globe update
-  squig.update();
+  globe.bounceGlobe(.1);  // change this to globe update
+  //squig.update();
   cylinder.update();
   triShad.update();
   torus.update();
   pg2.endDraw();
   
   // draw pg2 image buffer
-  //image(pg2, 0,0);  // not fullscreen
-  image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
+  image(pg2, 0,0);  // not fullscreen
+  //image(pg2, 0,0, displayWidth, displayHeight);  // when fullscreen
   
     // pg3 settings
   pg3.beginDraw();
@@ -109,8 +110,9 @@ void draw(){
   pg3.endDraw();
   
   // draw pg3 image buffer
-  //image(pg3, 0,0);  // not fullscreen
-  image(pg3, 0,0, displayWidth, displayHeight);  // when fullscreen
-  
-
+  image(pg3, 0,0);  // not fullscreen
+  //image(pg3, 0,0, displayWidth, displayHeight);  // when fullscreen
+  if (frameCount % 2 == 0){
+  saveFrame("4mov/########-viz.tga");
+  }
 }

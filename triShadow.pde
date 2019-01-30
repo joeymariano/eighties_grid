@@ -16,7 +16,7 @@ class TriShadow{
  
  void update(){
    pg2.pushMatrix();
-   pg2.translate(pg.width/3, pg.height/3, 0);
+   pg2.translate(pg.width/7, pg.height/1.5, 0);
    //pg2.rotateX(100);
    pg2.rotateZ(rot);
    pg2.rotateY(rot/4);
