@@ -112,7 +112,7 @@ void draw(){
   // draw pg3 image buffer
   image(pg3, 0,0);  // not fullscreen
   //image(pg3, 0,0, displayWidth, displayHeight);  // when fullscreen
-  if (frameCount % 2 == 0){
+  if (frameCount % 8 == 0){
   saveFrame("4mov/########-viz.tga");
   }
 }
