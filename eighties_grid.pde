@@ -54,21 +54,21 @@ void setup(){
   
   // initialize Objects
   //  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
-  grid1 = new Grid(colrs[1], 60, 0); 
-  // color (purple), spacing, line, 3d-depth
-  grid2 = new Grid(colrs[5], 120, -20); 
-  // color (pink), transparency
-  globe = new Globe(colrs[2], 255);
+  grid1 = new Grid(); 
+
+  grid2 = new Grid(); 
+
+  globe = new Globe();
   // color, size/length, thickness
   squig = new Squig(colrs[4], 20, 10);
-  // color, radius, depth, speed
-  cylinder = new Cylinder(colrs[3], 75, 175, 2);
+
+  cylinder = new Cylinder();
   // color one, color two, speed
   triShad = new TriShadow(colrs[2], colrs[4], .05);
   // color, thickness, size
   torus = new Torus(colrs[2], 5, 50);
   //
-  scroller = new Scrollr("oh");
+  scroller = new Scrollr();
   // ηmlstyl
 }
 
@@ -76,8 +76,9 @@ void draw(){
   // pg settings
   pg.beginDraw();
   pg.background(colrs[0]);
-  grid2.update();
-  grid1.update();
+  // color (purple), spacing, line, 3d-depth
+  grid2.update(colrs[1], 60, 0);
+  grid1.update(colrs[5], 120, -20);
   pg.endDraw();
   
   // draw pg image buffer
@@ -92,9 +93,11 @@ void draw(){
   pg2.ambientLight(300,300,300);
   
   // draw objects
-  globe.bounceGlobe(.1);  // change this to globe update
+  // color (pink), transparency, speedIncrem
+  globe.update(colrs[2], 255, .1);
   //squig.update();
-  cylinder.update();
+  // color, radius, depth, speed
+  cylinder.update(colrs[3],75, 175, 2);
   triShad.update();
   torus.update();
   pg2.endDraw();
@@ -106,7 +109,7 @@ void draw(){
     // pg3 settings
   pg3.beginDraw();
   pg3.background(colrs[0], 0);
-  scroller.update();
+  scroller.update("oh", colrs[6]);
   pg3.endDraw();
   
   // draw pg3 image buffer

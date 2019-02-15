@@ -1,19 +1,12 @@
 class Cylinder {
-  float radius;
   float ang;
   float ang2;
-  float depth;
-  color colr;
-  float speed;
+
   
-  Cylinder(color tempColr, float tempRadius, float tempDepth, float tempSpeed){
-    colr = tempColr;
-    radius = tempRadius;
-    depth = tempDepth;
-    speed = tempSpeed;
+  Cylinder(){
   }
   
-  void update(){
+  void update(color colr, float radius, float depth, float speed){
      pg2.pushMatrix();
      pg2.fill(colr);
      pg2.translate(pg2.width/2, pg2.height/2, -200);

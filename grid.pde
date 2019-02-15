@@ -5,21 +5,15 @@ class Grid {
   int upperLeftX;
   int upperLeftY;
   float spin;
-  color colr;
-  float space;
-  float lineDepth;
   
-  Grid(color tempColr, float tempSpace, float tempLineDepth){
+  Grid(){
     gridStroke = 0;
     gridGrow = false;
     upperLeftX = -displayWidth;
     upperLeftY = -displayHeight;
-    colr = tempColr;
-    space = tempSpace;
-    lineDepth = tempLineDepth;
   }
  
-  void update(){
+  void update(color colr, float space, float lineDepth){
     pg.pushMatrix();
     
     spin += .2;
