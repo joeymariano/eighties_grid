@@ -12,7 +12,7 @@ class Torus{
   //vertices
   PVector vertices[], vertices2[];
 
-  Torus(color tempColor, float tempThickness, float tempLatheRadius){
+  Torus(float tempThickness, float tempLatheRadius){
     pts = 40; 
     thickness = tempThickness;
     
@@ -20,9 +20,6 @@ class Torus{
     segments = 120;
     latheAngle = 0;
     latheRadius = tempLatheRadius;
-    
-    // assign color to variable
-    clr = tempColor;
     
     // initialize point arrays
     vertices = new PVector[pts+1];
@@ -39,7 +36,7 @@ class Torus{
     }
   }
   
-  void update(){
+  void update(color clr ){
       pg2.pushMatrix();
       pg2.fill(clr);
       //center and spin toroid

@@ -17,7 +17,6 @@ color[] colrs = { white, black, pink, blue, yellow, purple, red };
 Grid grid1;
 Grid grid2;
 Globe globe;
-Squig squig;
 Cylinder cylinder;
 TriShadow triShad;
 Torus torus;
@@ -38,9 +37,12 @@ PFont font;
 void settings(){
   //fullScreen(P3D);
    size(800,450, P3D);  // not fullscreen
+
 }
 
 void setup(){
+  colorMode(RGB);
+  
   pg = createGraphics(800,450, P3D);
   pg.noSmooth();
   pg2 = createGraphics(800,450, P3D);
@@ -55,19 +57,11 @@ void setup(){
   // initialize Objects
   //  0: white, 1: black, 2: pink, 3: blue, 4: yellow, 5: purple, 6: red
   grid1 = new Grid(); 
-
   grid2 = new Grid(); 
-
   globe = new Globe();
-  // color, size/length, thickness
-  squig = new Squig(colrs[4], 20, 10);
-
   cylinder = new Cylinder();
-  // color one, color two, speed
-  triShad = new TriShadow(colrs[2], colrs[4], .05);
-  // color, thickness, size
-  torus = new Torus(colrs[2], 5, 50);
-  //
+  triShad = new TriShadow();
+  torus = new Torus(5, 50);
   scroller = new Scrollr();
   // ηmlstyl
 }
@@ -89,8 +83,9 @@ void draw(){
   // pg2 settings
   pg2.beginDraw();
   pg2.background(colrs[0], 0);
-  pg2.directionalLight(200,200,200, -1, 0, -3);
-  pg2.ambientLight(300,300,300);
+  // r,g,b,x,y,z
+  pg2.directionalLight(255,255,255, -1, 0, -3);
+  pg2.ambientLight(50,50,50);
   
   // draw objects
   // color (pink), transparency, speedIncrem
@@ -98,8 +93,8 @@ void draw(){
   //squig.update();
   // color, radius, depth, speed
   cylinder.update(colrs[3],75, 175, 2);
-  triShad.update();
-  torus.update();
+  triShad.update(colrs[2], colrs[4], .05);
+  torus.update(colrs[2]);
   pg2.endDraw();
   
   // draw pg2 image buffer

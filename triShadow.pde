@@ -8,13 +8,11 @@ class TriShadow{
   float rot;
   float speed;
 
- TriShadow(color tempColr1, color tempColr2, float tempSpeed){
-   colr1 = tempColr1;
-   colr2 = tempColr2;
-   speed = tempSpeed;
+ TriShadow(){
+
  }
  
- void update(){
+ void update(color colr1, color colr2, float speed){
    pg2.pushMatrix();
    pg2.translate(pg.width/7, pg.height/1.5, 0);
    //pg2.rotateX(100);
